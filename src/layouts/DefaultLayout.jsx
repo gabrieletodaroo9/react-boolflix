@@ -1,13 +1,12 @@
 import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
 
 export default function DefaultLayout() {
 
     return (
         <>
-            <header>
-                Sono l'header
-            </header>
-            <main>
+            <Header />
+            <main className="bg-first">
                 <Outlet />
             </main>
             <footer>

@@ -1,4 +1,5 @@
-import noImg from '../assets/img-noimg.jpg';
+import { useEffect } from 'react';
+import noImg from '../assets/img-noimg.png';
 
 
 export default function Card({ obj }) {
@@ -9,18 +10,20 @@ export default function Card({ obj }) {
     const starRating = Math.ceil(obj.vote_average / 2);
     const stars = []
 
-    for (let i = 0; i < 5; i++) {
-        const starClass = i < starRating ? 'bi bi-star-fill text-warning pe-1' : 'bi bi-star text-secondary pe-1'
-        stars.push(<i key={i} className={starClass}></i>)
+    for (let i = 0; i < starRating; i++) {
+        stars.push(<i key={`fill${i}`} className=" bi bi-star-fill text-warning pe-1"></i>)
+    }
+    for (let i = starRating; i < 5; i++) {
+        stars.push(<i key={`unfill${i}`} className="bi bi-star text-secondary pe-1"></i>)
     }
 
     return (
-        <div className="col-12 col-md-6 col-lg-4">
-            <div className="card h-100">
-                <div className="card-header">
-                    <img className="card-img-top" src={obj.backdrop_path ? `https://image.tmdb.org/t/p/w300/${obj.backdrop_path}` : noImg} />
+        <div className="col-6 col-lg-4 col-xxl-3">
+            <div className="card position-relative border-0 h-100 bg-black rounded-5">
+                <div className='p-0 m-0 ratio-2x3'>
+                    <img className="card-img-top object-fit-cover d-block" src={obj.poster_path ? `https://image.tmdb.org/t/p/w300/${obj.poster_path}` : noImg} />
                 </div>
-                <div className="card-body">
+                <div className="position-absolute card-overlay text-second">
                     <h1 > {obj.original_title ? obj.original_title : obj.original_name}</h1>
                     <div className="mb-3">
                         {stars}
