@@ -1,21 +1,19 @@
+import SearchBar from "../components/SearchBar"
 import { useData } from "../Context/GeneralContext"
 
 
 export default function HomePage() {
 
-    const { data } = useData()
+    const { filteredMovies } = useData()
 
 
     return (
         <>
             <div className="container">
-                <div className="input-group mb-3">
-                    <input type="text" className="form-control" placeholder="Scrivi un film..." />
-                    <button className="btn btn-outline-secondary" type="button" id="button-addon2">Cerca</button>
-                </div>
+                <SearchBar />
                 <div className="row" >
-                    {data &&
-                        data.map(obj => (
+                    {filteredMovies &&
+                        filteredMovies.map(obj => (
                             <div key={obj.id} className="col-12 col-md-6 col-lg-4">
                                 <div className="card">
                                     <div className="card-header">
