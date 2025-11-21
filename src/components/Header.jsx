@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <>
             <header className='bg-black'>
-                <div className="container-fluid d-flex justify-content-between align-items-center text-white py-3 px-5">
+                <div className="container-fluid d-flex justify-content-between align-items-center text-white py-2 px-5">
                     <div className='me-4'>
                         <Link to="/">
                             <img className='logo' src={logoBoolfix} alt="Logo Boolfix" />
@@ -15,16 +15,16 @@ export default function Header() {
                     <div>
                         <ul className='d-flex align-items-center list-unstyled mb-0 gap-4'>
                             <li>
-                                <Link className='text-second text-decoration-none fw-bold'>Home</Link>
+                                <Link to='/' className='text-second text-decoration-none fw-bold'>Home</Link>
                             </li>
                             <li>
-                                <Link className='text-second text-decoration-none fw-bold'>Film</Link>
+                                <Link to='/movies' className='text-second text-decoration-none fw-bold'>Film</Link>
                             </li>
                             <li>
-                                <Link className='text-second text-decoration-none fw-bold'>Serie TV</Link>
+                                <Link to='/tvseries' className='text-second text-decoration-none fw-bold'>Serie TV</Link>
                             </li>
                             <li>
-                                <Link className='text-second text-decoration-none fw-bold'>Popolari</Link>
+                                <Link to='/popular' className='text-second text-decoration-none fw-bold'>Popolari</Link>
                             </li>
                         </ul>
                     </div>

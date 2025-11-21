@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import noImg from '../assets/img-noimg.png';
 
 
@@ -24,7 +23,7 @@ export default function Card({ obj }) {
                     <img className="card-img-top object-fit-cover d-block" src={obj.poster_path ? `https://image.tmdb.org/t/p/w300/${obj.poster_path}` : noImg} />
                 </div>
                 <div className="position-absolute card-overlay text-second">
-                    <h1 > {obj.original_title ? obj.original_title : obj.original_name}</h1>
+                    <h3 > {obj.original_title ? obj.original_title : obj.original_name}</h3>
                     <div className="mb-3">
                         {stars}
                     </div>
