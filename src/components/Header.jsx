@@ -26,9 +26,6 @@ export default function Header() {
                             <li>
                                 <Link className='text-second text-decoration-none fw-bold'>Popolari</Link>
                             </li>
-                            <li>
-                                <Link className='text-second text-decoration-none fw-bold'>Social</Link>
-                            </li>
                         </ul>
                     </div>
                     <div className='align-self-end'>

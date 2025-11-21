@@ -31,6 +31,7 @@ export default function Card({ obj }) {
                     <p className="card-text">
                         Lingua Originale:{flagCode ? <span className={`fi fi-${flagCode} ms-2`}></span> : <span>{obj.original_language}</span>}
                     </p>
+                    <div className='card-trama'>Trama:{obj.overview? <span >{obj.overview}</span> : <span> "nessuna trama"</span> }</div>
                 </div>
             </div>
         </div>
